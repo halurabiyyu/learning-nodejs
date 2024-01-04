@@ -1,7 +1,27 @@
-console.log("Menyalakan mesin kopi");
-console.log("Menggiling biji kopi");
-console.log("Memanaskan air");
-console.log("Mencampurkan air dan kopi");
-console.log("Menuangkan kopi ke dalam gelas");
-console.log("Menuangkan susu ke dalam gelas");
-console.log("Kopi Anda sudah siap!");
+// import -> require
+// const {coffeeStok, isCoffeeMachineReady} = require('./state');
+
+
+const makeCoffe = (type, miligrams) => {
+    if (coffeeStok[type] >= miligrams) {
+        console.log('Kopi berhasil dibuat!');
+    }else{
+        console.log("Biji Kopi habis!");
+    }
+}
+
+// makeCoffe("robusta", 80);
+// console.log(Stok);
+// console.log(isCoffeeMachineReady);
+
+
+//ES6 Moduling
+// import Stok from "./state.js";
+import {coffeeStok, isCoffeeMachineReady } from "./state.js";
+const displayStok = Stok =>{
+    for (const type in Stok) {
+        console.log(type);   
+    }
+}
+displayStok(coffeeStok);
+console.log(isCoffeeMachineReady);
